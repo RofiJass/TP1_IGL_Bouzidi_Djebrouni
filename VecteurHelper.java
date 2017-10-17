@@ -13,6 +13,9 @@ public class VecteurHelper {
     public int taille=0;
     public int tableInv[]=null;
     public int tableTrie[]=null;
+	public int tableForm[] = null;
+	public int max;
+	public int min;
     
     
     /**
@@ -26,7 +29,7 @@ public class VecteurHelper {
         System.out.println("donnez la taille du tableau : ");
         this.taille=sc.nextInt();}
         this.table = new int[taille] ;
-        System.out.println("citer les élements de votre vecteur");
+        System.out.println("citer les Ã©lements de votre vecteur");
         for(i=0;i<taille;i++){
           elem=sc.nextInt();
           this.table[i]=elem;
@@ -34,7 +37,7 @@ public class VecteurHelper {
     }
     
     /**
-     * Cette Methode permet d'afficher les élements d'un tableau donné, de son inverse (s'il existe), de la table trié (si l'utilisateur a demandé le tri) 
+     * Cette Methode permet d'afficher les Ã©lements d'un tableau donnÃ©, de son inverse (s'il existe), de la table triÃ© (si l'utilisateur a demandÃ© le tri) 
 	 * @param args
 	 */
     public void affichTab(){
@@ -123,7 +126,7 @@ public class VecteurHelper {
        Scanner sc = new Scanner(System.in);
        System.out.println("donnez la taille du premier tableau : ");
        a.taille=sc.nextInt();
-       System.out.println("donnez la taille du deuxième tableau : ");
+       System.out.println("donnez la taille du deuxiÃ¨me tableau : ");
        b.taille=sc.nextInt();
        if(a.taille!=b.taille){
            throw new LenghtNotEqualException();
@@ -152,7 +155,7 @@ public class VecteurHelper {
 	        o.initTab();
 	        o.triSelect();
 	        o.inversTab();
-	        //System.out.println("Voici le tableau trié ");
+	        //System.out.println("Voici le tableau triÃ© ");
 	        o.affichTab();
 	        
 	        
@@ -167,6 +170,26 @@ public class VecteurHelper {
 	        a.affichTab();*/
 
 	}
+	
+	public void trouverMaxMin(){
+		int max, min;
+        max = this.table[0];
+	min = this.table[0];
+        int i;
+        for(i=1;i<this.taille;i++){
+		if (this.table[i]>max) { max = this.table[i];}
+		if (this.table[i]<min) { min = this.table[i];}
+	}
+		this.max = max;
+		this.min = min;
+        }
+	public void appFormulTab(){
+        this.tableForm= new int[this.taille] ;
+        int i;
+        for(i=0;i<this.taille;i++){
+          this.tableForm[i] = this.table[i]*2;
+        }
+    }
 
 }
 
