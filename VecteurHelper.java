@@ -1,78 +1,47 @@
-
-package VecteurHelp;
+﻿/**
+ * 
+ */
+package VecteurHelper;
 
 import java.util.Scanner;
 
 /**
- * @author pc
+ * @author Bouzidi Djebrouni
  *
  */
 public class VecteurHelper {
 	
-	public int table [] ;
-    public int taille=0;
-    public int tableInv[]=null;
-    public int tableTrie[]=null;
-	public int tableForm[] = null;
-	public int max;
-	public int min;
-    
-    
     /**
-     * Cette methode permet d'initialiser le tableau, en donnant la taille et les objets qui construit ce tableau
-	 * @param rien
+     * Cette methode permet d'initialiser le tableau, en donnant la taille et les objets qui constituent ce tableau.
+	 * @param Tableau à initialiser
 	 */
-    public void initTab(){
-        int i,elem;
+    public void initTab(int[] a){
+        int i,elem,taille=0;
         Scanner sc = new Scanner(System.in);
-        if(this.taille==0){
+        if(a.length==0){
         System.out.println("donnez la taille du tableau : ");
-        this.taille=sc.nextInt();}
-        this.table = new int[taille] ;
+        taille=sc.nextInt();}
+        a = new int[taille] ;
         System.out.println("citer les élements de votre vecteur");
         for(i=0;i<taille;i++){
           elem=sc.nextInt();
-          this.table[i]=elem;
+          a[i]=elem;
         }
     }
     
-    /**
-     * Cette Methode permet d'afficher les élements d'un tableau donné, de son inverse (s'il existe), de la table trié (si l'utilisateur a demandé le tri) 
-	 * @param args
-	 */
-    public void affichTab(){
-        int i;
-        for(i=0;i<this.taille;i++){
-            System.out.print(" |"+this.table[i]+"|");
-        }
-        
-        if(this.tableInv!=null){
-        	System.out.println("");
-            System.out.println("L'inverse du tableau est:");
-          for(i=0;i<this.taille;i++){
-            System.out.print(" |"+this.tableInv[i]+"|");
-        }
-          if(this.tableTrie!=null){
-        	  System.out.println("");
-                  System.out.println("Le tableau trie est est:");
-                for(i=0;i<this.taille;i++){
-                  System.out.print(" |"+this.tableTrie[i]+"|");
-              } 
-          }
-        }
-    }
     
     /**
-     * Cette Methode 
-	 * @param args
+     * Cette Methode effectue le tri par sélection d'un tableau.
+	 * @param a tableau à trier
+	 * @return tcurr tableau trié.
 	 */
-    public void triSelect(){
+    public int[] triSelect(int[] a){
         int i,j,min,f,k;
-       int tcurr[]= new int[this.taille];
-       for(i=0;i<this.taille;i++){tcurr[i]=this.table[i];}
-        for(i=0;i<this.taille-1;i++){
+       int tcurr[]= new int[a.length];
+       for(i=0;i<a.length;i++){tcurr[i]=a[i];}
+        for(i=0;i<a.length-1;i++){
             min=tcurr[i];
-            for(j=i;j<this.taille;j++){
+            for(j=i;j<a.length;j++){
                 if(tcurr[j]<min){
                     min=tcurr[j];
                     k=j;
@@ -82,26 +51,33 @@ public class VecteurHelper {
                 }
             }
         }
-        this.tableTrie=tcurr;
+        return tcurr;
     }
     
-    
-    public void inversTab(){
-        this.tableInv= new int[this.taille] ;
+    /**
+     * Cette Methode inverse l'ordre des éléments d'un tableau.
+	 * @param a tableau à inverser
+	 * @return tableInv tableau dont les éléments sont dans l'ordre inverse de celui en entrée.
+	 */
+    public int[] inversTab(int[] a){
+    	int tableInv[] = null;
         int i;
-        for(i=0;i<this.taille;i++){
-          this.tableInv[i] = this.table[this.taille-1-i];
+        for(i=0;i<a.length;i++){
+          tableInv[i] = a[a.length-1-i];
         }
+        return tableInv;
     }
     
-    /************************version 1********************************/
-    /***** mais ici je dois travailler avec la methode length et les methodes predifinies interdites pour ce TP!*/
-   static int[] sommeVect(int[] a, int[] b) throws LenghtNotEqualException{
+    /**
+     * Cette Methode calcule la somme de deux vecteurs. elle renvoie une exception si les deux tableaux n'ont pas la mème taille.
+	 * @param a et b, deux tablaux qu'on calcule leur somme.
+	 * @return result, tableau résultant de la somme de a et b.
+	 */
+    public int[] sommeVect(int[] a, int[] b) throws LenghtNotEqualException{
         int i,tailA,tailB ;
-        
         tailA=a.length;
         tailB=b.length;
-        if(tailA!=tailB){
+        if(tailA!=tailB){        	
             throw new LenghtNotEqualException();
         }else{
          int result[]= new int[tailA] ; 
@@ -117,79 +93,39 @@ public class VecteurHelper {
     }
     
 
-   /*************************Version2**********************************/
-   /***celle-ci est la plus logique pour moi***************************/
-   
-   static VecteurHelper sommeVect(VecteurHelper a, VecteurHelper b) throws LenghtNotEqualException{
-       int i ;
-       /***on peut enlever les scanf hado c'est juste pour le test**/
-       Scanner sc = new Scanner(System.in);
-       System.out.println("donnez la taille du premier tableau : ");
-       a.taille=sc.nextInt();
-       System.out.println("donnez la taille du deuxième tableau : ");
-       b.taille=sc.nextInt();
-       if(a.taille!=b.taille){
-           throw new LenghtNotEqualException();
-       }else{
-    	   VecteurHelper c = new VecteurHelper();
-           a.initTab();
-           b.initTab();
-        int result[]= new int[a.taille] ; 
-        for(i=0;i<a.taille;i++){
-            result[i]=a.table[i]+b.table[i] ;
-        }
-        c.taille=a.taille;
-        c.table=result;
-        for(i=0;i<a.taille;i++){
-            System.out.print(" |"+result[i]+"|");
-        }
-        return c;
+   /**
+    * Cette Methode calcule le min et le max d'un tableau.
+    ** @param a tableau pour lequel on veut trouver le min et le max.
+    ** @return {min,max} , un tableau contenant le min et max de a.
+	 */
+   public int[] trouverMaxMin(int a[]){
+	   int max, min;
+	   min = a[0];
+       max = a[0];
+       
+       int i;
+       for(i=1;i<a.length;i++)
+       /*Parcourir les éléments de a en cherchant*/{
+
+   		if (a[i]<min) { min = a[i];}
+		if (a[i]>max) { max = a[i];}
        }
+		return new int[] {min,max};
+       }
+   
+   /**
+    * Cette Methode applique la formule *2 à tous les éléments d'un tableau.
+	 * @param a tableau auquel on veut appliquer la formule
+	 * @return b renvoie le tableau résultant de la formule.
+	 */   
+	public int[] appFormulTab(int[] a){
+       int i;
+       int[] b = new int[a.length];/*Tableau résutltat*/
+       for(i=0;i<a.length;i++)
+    /*Parcourir le tableau en entrée, appliquer la formule *2 à ses entrées et les mettre dans le tableau b*/
+       {
+         b[i] = a[i]*2;
+       }
+    	   return b;
    }
-   
-   
-	public static void main(String[] args) throws LenghtNotEqualException  {
-		// TODO Auto-generated method stub
-	        // TODO code application logic here
-	        VecteurHelper o =new VecteurHelper();
-	        o.initTab();
-	        o.triSelect();
-	        o.inversTab();
-	        //System.out.println("Voici le tableau trié ");
-	        o.affichTab();
-	        
-	        
-		/*********** test de la somme ***************/
-	        /*VecteurHelper a = new VecteurHelper();
-	        VecteurHelper b = new VecteurHelper();
-	        VecteurHelper c = new VecteurHelper();
-	        c=sommeVect(a,b);
-	        c.affichTab();
-	        /*a.initTab();
-	        a.inversTab();
-	        a.affichTab();*/
-
-	}
-	
-	public void trouverMaxMin(){
-		int max, min;
-        max = this.table[0];
-	min = this.table[0];
-        int i;
-        for(i=1;i<this.taille;i++){
-		if (this.table[i]>max) { max = this.table[i];}
-		if (this.table[i]<min) { min = this.table[i];}
-	}
-		this.max = max;
-		this.min = min;
-        }
-	public void appFormulTab(){
-        this.tableForm= new int[this.taille] ;
-        int i;
-        for(i=0;i<this.taille;i++){
-          this.tableForm[i] = this.table[i]*2;
-        }
-    }
-
 }
-
