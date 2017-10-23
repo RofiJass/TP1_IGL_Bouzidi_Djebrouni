@@ -9,11 +9,9 @@ package VecteurHelper;
  * elle afficherait un message indiquant à l'utilisateur que la taille des 2 vecteurs fournis est différente. </b>
  *
  */
-public class LenghtNotEqualException extends Exception
-/*L'exception déclenchée lorsque deux vecteurs n'ont pas la mème taille, sert pour le calcul de la somme de deux vecteurs.*/
-{
+public class LenghtNotEqualException extends Exception{
 	/**
-     * Cette Methode est le constructeur de l'exception.
+     * Cette Methode est le constructeur de l'exception, et celle-ci qui va afficher le message de l'exception en faisant appel au constructeur de la class Exception.
 	  */
 	public LenghtNotEqualException(){
 	    super("La taille des deux vecteurs n'est pas identique !");
