@@ -6,6 +6,7 @@ package VecteurHelper;
 import java.util.Scanner;
 
 /**
+ * <h1>VecteurHelper Application!</h1>
  * <b>VecteurHelper est la classe contenant plusieurs methodes qui effectuent des opérations sur un vecteur ou plusieurs.</b>
  * <p>
  * Les opérations que assure la class VecteurHelper sont les suivants:
@@ -21,14 +22,16 @@ import java.util.Scanner;
  * </p>
  * 
  * @author Djebrouni Yasmine_Bouzidi Halima.
- * @version 1.0 (Réaliser en language Java sous l'IDE Eclipse).
+ * @version 1.0 (Réalisé en language Java sous l'IDE Eclipse).
+ * @ since 2017-10-21
  **/
 
 public class VecteurHelper {
 	
     /**
-     * Cette methode permet d'initialiser le vecteur, en donnant la taille et les objets qui constituent ce vecteur.
-	 * @param a vecteur à initialiser.
+     * Cette methode permet d'initialiser le vecteur, en donnant la taille et les élements de ce vecteur.
+	 * @param a un vecteur à initialiser.
+	 * @retunr rien
 	 */
     public void initTab(int[] a){
         int i,elem,taille=0;
@@ -48,7 +51,7 @@ public class VecteurHelper {
     
     /**
      * Cette Methode effectue le tri par sélection d'un vecteur.
-	 * @param a vecteur à trier
+	 * @param a un vecteur à trier, ce dernier doit ètre initialisé.
 	 * @return un vecteur trié.
 	 */
     public int[] triSelect(int[] a){
@@ -71,8 +74,8 @@ public class VecteurHelper {
     }
     
     /**
-     * Cette Methode inverse l'ordre des éléments d'un vecteur.
-	 * @param a vecteur à inverser
+     * Cette Methode inverse l'ordre des éléments d'un vecteur. par exemple le vecteur initiale est celui-ci : [1,2,3] son inverse est : [3,2,1].
+	 * @param a un vecteur à inverser
 	 * @return un vecteur dont les éléments sont dans l'ordre inverse de celui en entrée.
 	 */
     public int[] inversTab(int[] a){
@@ -85,11 +88,12 @@ public class VecteurHelper {
     }
     
     /**
-     * Cette Methode calcule la somme de deux vecteurs.
-	 * @param a un vecteur.
-	 * @param b un vecteur.
-	 * @return un vecteur résultant de la somme de a et b.
+     * Cette Methode calcule la somme de deux vecteurs, si on a vect1 = [1,2,3] et vect2 = [1,2,3] alors le vecteur resultat est le suivant : [2,4,6].
+	 * @param a le premier vecteur paramètre de la methode..
+	 * @param b le deuxième vecteur paramètre de la methode..
+	 * @return un vecteur résultat de la somme de a et b.
 	 * @throws LenghtNotEqualException Si les deux vecteurs n'ont pas la mème taille (le nombre d'élements).
+	 * @see LenghtNotEqualException
 	 */
     public int[] sommeVect(int[] a, int[] b) throws LenghtNotEqualException{
         int i,tailA,tailB ;
@@ -108,9 +112,9 @@ public class VecteurHelper {
     
 
    /**
-    * Cette Methode calcule le min et le max d'un vecteur.
+    * Cette Methode calcule le min et le max d'un vecteur, par exemple cherche le MinMax du vect = [25,0,9563] alors la methode renvoie le vecteur [0,9563] qui contient le MinMax du vecteur en entrée.
     ** @param a vecteur pour lequel on veut trouver le min et le max.
-    ** @return un vecteur contenant le min et max de a, de la forme [min,max].
+    ** @return un vecteur contenant le min et max de a, sous la forme [min,max].
 	 */
    public int[] trouverMaxMin(int a[]){
 	   int max, min;
@@ -130,7 +134,7 @@ public class VecteurHelper {
    /**
     * Cette Methode applique la formule *2 à tous les éléments d'un vecteur.
 	 * @param a vecteur auquel on veut appliquer la formule
-	 * @return  renvoie le vecteur résultant de la formule.
+	 * @return  renvoie le vecteur résultat de la formule.
 	 */   
 	public int[] appFormulTab(int[] a){
        int i;
