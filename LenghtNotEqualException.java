@@ -4,6 +4,7 @@
 package VecteurHelper;
 
 /**
+ *  <h1>LenghtNotEqualException</h1>
  * <b>La classe LenghtNotEqualException est une sous classe de Exception, elle contient l'unique methode LenghtNotEqualException.
  * elle afficherait un message indiquant à l'utilisateur que la taille des 2 vecteurs fournis est différente. </b>
  *
