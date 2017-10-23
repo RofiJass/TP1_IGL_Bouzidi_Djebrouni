@@ -8,6 +8,7 @@ import VecteurHelper.LenghtNotEqualException;
 import VecteurHelper.VecteurHelper;
 
 /**
+ * <h1>VecteurHelperTest</h1>
  * <b> VecteurHelperTest est la classe cqui contient les tests sur les mehodes implémentées dans la classe {@link VecteurHelper} </b>
  *<p>
  * Elle contient commme attributs :
