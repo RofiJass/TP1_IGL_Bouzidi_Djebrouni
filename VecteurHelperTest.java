@@ -20,7 +20,7 @@ import VecteurHelper.VecteurHelper;
  */
 public class VecteurHelperTest {
 	
-	VecteurHelper a = new VecteurHelper();
+	VecteurHelper vectTest = new VecteurHelper();
 	int table[] = {25,65,2,0,148};
 	int t1[] = {1,2,3,4,5};
 	int t2[] = {1,2,3,4,5};
@@ -30,9 +30,9 @@ public class VecteurHelperTest {
 	 */
 	@Test
 	public void testTriSelect() {
-		a.triSelect(table);
+		vectTest.triSelect(table);
 		int tableT[] = {0,2,25,65,148}; 
-		assertArrayEquals(tableT,a.triSelect(table)) ;
+		assertArrayEquals(tableT,vectTest.triSelect(table)) ;
 	}
 
 	/**
@@ -41,7 +41,7 @@ public class VecteurHelperTest {
 	@Test
 	public void testInversTab() {
 		int tableI[] = {148,0,2,65,25};
-		assertArrayEquals(tableI,a.inversTab(table)) ;
+		assertArrayEquals(tableI,vectTest.inversTab(table)) ;
 	}
 	
 	/**
@@ -51,7 +51,7 @@ public class VecteurHelperTest {
 	@Test
 	public void testSommeTable() throws LenghtNotEqualException {
 		int tableS[]={2,4,6,8,10};
-		assertArrayEquals(tableS,a.sommeVect(t1, t2));
+		assertArrayEquals(tableS,vectTest.sommeVect(t1, t2));
 	 }
 
 	/**
@@ -62,7 +62,7 @@ public class VecteurHelperTest {
 	public void testTrouverMaxMin() {
 		int tMinMax[] = {0,148};
 		
-		assertArrayEquals(tMinMax,a.trouverMaxMin(table));
+		assertArrayEquals(tMinMax,vectTest.trouverMaxMin(table));
 	}
 	
 	/**
@@ -71,8 +71,8 @@ public class VecteurHelperTest {
 	@Test
 	public void testAppFormulTab() {
 		int tForm[] = {50,130,4,0,296};
-		a.appFormulTab(table);
-		assertArrayEquals(tForm,a.appFormulTab(table));
+		vectTest.appFormulTab(table);
+		assertArrayEquals(tForm,vectTest.appFormulTab(table));
 	}
 
 }
