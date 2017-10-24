@@ -1,34 +1,34 @@
 /**
  * 
  */
-package VecteurHelper;
+
 
 import java.util.Scanner;
 
 /**
- * <b>VecteurHelper est la classe contenant plusieurs methodes qui effectuent des opérations sur un vecteur ou plusieurs.</b>
+ * <b>VecteurHelper est la classe contenant plusieurs methodes qui effectuent des opÃ©rations sur un vecteur ou plusieurs.</b>
  * <p>
- * Les opérations que assure la class VecteurHelper sont les suivants:
+ * Les opÃ©rations que assure la class VecteurHelper sont les suivants:
  * <ul>
- * <li>Trier les élements d'un vecteur donné.</li>
- * <li>Sommer deux vecteurs donnés en entrée, cette opération déclenche une exception si la taille des deux vecteurs n'est pas la mème.</li>
+ * <li>Trier les Ã©lements d'un vecteur donnÃ©.</li>
+ * <li>Sommer deux vecteurs donnÃ©s en entrÃ©e, cette opÃ©ration dÃ©clenche une exception si la taille des deux vecteurs n'est pas la mÃ¨me.</li>
  * <li>Fournir l'inverse d'un vecteur Inv{1,2,3}={3,2,1}.</li>
- * <li>Obtenir simultanément le min et le max d'un vecteur.</li>
- * <li>Applique la fonction F(x)=2x à tout élement du vecteur.</li>
+ * <li>Obtenir simultanÃ©ment le min et le max d'un vecteur.</li>
+ * <li>Applique la fonction F(x)=2x Ã  tout Ã©lement du vecteur.</li>
  * </ul>
  * <p>
- * De plus, il y a une methode qui permet l'initialisation des élements du vecteur.
+ * De plus, il y a une methode qui permet l'initialisation des Ã©lements du vecteur.
  * </p>
  * 
  * @author Djebrouni Yasmine_Bouzidi Halima.
- * @version 1.0 (Réaliser en language Java sous l'IDE Eclipse).
+ * @version 1.0 (RÃ©aliser en language Java sous l'IDE Eclipse).
  **/
 
 public class VecteurHelper {
 	
     /**
      * Cette methode permet d'initialiser le vecteur, en donnant la taille et les objets qui constituent ce vecteur.
-	 * @param a vecteur à initialiser.
+	 * @param a vecteur Ã  initialiser.
 	 */
     public void initTab(int[] a){
         int i,elem,taille=0;
@@ -37,7 +37,7 @@ public class VecteurHelper {
         System.out.println("donnez la taille du tableau : ");
         taille=sc.nextInt();}
         a = new int[taille] ;
-        System.out.println("citer les élements de votre vecteur");
+        System.out.println("citer les Ã©lements de votre vecteur");
         for(i=0;i<taille;i++){
           elem=sc.nextInt();
           a[i]=elem;
@@ -47,9 +47,9 @@ public class VecteurHelper {
     
     
     /**
-     * Cette Methode effectue le tri par sélection d'un vecteur.
-	 * @param a vecteur à trier
-	 * @return un vecteur trié.
+     * Cette Methode effectue le tri par sÃ©lection d'un vecteur.
+	 * @param a vecteur Ã  trier
+	 * @return un vecteur triÃ©.
 	 */
     public int[] triSelect(int[] a){
         int i,j,min,f,k;
@@ -71,9 +71,9 @@ public class VecteurHelper {
     }
     
     /**
-     * Cette Methode inverse l'ordre des éléments d'un vecteur.
-	 * @param a vecteur à inverser
-	 * @return un vecteur dont les éléments sont dans l'ordre inverse de celui en entrée.
+     * Cette Methode inverse l'ordre des Ã©lÃ©ments d'un vecteur.
+	 * @param a vecteur Ã  inverser
+	 * @return un vecteur dont les Ã©lÃ©ments sont dans l'ordre inverse de celui en entrÃ©e.
 	 */
     public int[] inversTab(int[] a){
     	int[] tableInv= new int[a.length] ;
@@ -88,8 +88,8 @@ public class VecteurHelper {
      * Cette Methode calcule la somme de deux vecteurs.
 	 * @param a un vecteur.
 	 * @param b un vecteur.
-	 * @return un vecteur résultant de la somme de a et b.
-	 * @throws LenghtNotEqualException Si les deux vecteurs n'ont pas la mème taille (le nombre d'élements).
+	 * @return un vecteur rÃ©sultant de la somme de a et b.
+	 * @throws LenghtNotEqualException Si les deux vecteurs n'ont pas la mÃ¨me taille (le nombre d'Ã©lements).
 	 */
     public int[] sommeVect(int[] a, int[] b) throws LenghtNotEqualException{
         int i,tailA,tailB ;
@@ -119,7 +119,7 @@ public class VecteurHelper {
        
        int i;
        for(i=1;i<a.length;i++)
-       /*Parcourir les éléments de a en cherchant*/{
+       /*Parcourir les Ã©lÃ©ments de a en cherchant*/{
 
    		if (a[i]<min) { min = a[i];}
 		if (a[i]>max) { max = a[i];}
@@ -128,15 +128,15 @@ public class VecteurHelper {
        }
    
    /**
-    * Cette Methode applique la formule *2 à tous les éléments d'un vecteur.
+    * Cette Methode applique la formule *2 Ã  tous les Ã©lÃ©ments d'un vecteur.
 	 * @param a vecteur auquel on veut appliquer la formule
-	 * @return  renvoie le vecteur résultant de la formule.
+	 * @return  renvoie le vecteur rÃ©sultant de la formule.
 	 */   
 	public int[] appFormulTab(int[] a){
        int i;
-       int[] b = new int[a.length];/*Tableau résutltat*/
+       int[] b = new int[a.length];/*Tableau rÃ©sutltat*/
        for(i=0;i<a.length;i++)
-    /*Parcourir le tableau en entrée, appliquer la formule *2 à ses entrées et les mettre dans le tableau b*/
+    /*Parcourir le tableau en entrÃ©e, appliquer la formule *2 Ã  ses entrÃ©es et les mettre dans le tableau b*/
        {
          b[i] = a[i]*2;
        }
