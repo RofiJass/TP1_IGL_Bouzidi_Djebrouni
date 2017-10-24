@@ -34,7 +34,6 @@ public class VecteurHelperTest {
 		int tableT[] = {0,2,25,65,148}; 
 		assertArrayEquals(tableT,vectTest.triSelect(table)) ;
 	}
-	//méthode des testes des exceptiojs
 
 	/**
 	 * Test method for {@link VecteurHelper#inversTab(int[])}.
