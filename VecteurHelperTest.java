@@ -9,13 +9,13 @@ import VecteurHelper.VecteurHelper;
 
 /**
  * <h1>VecteurHelperTest</h1>
- * <b> VecteurHelperTest est la classe cqui contient les tests sur les mehodes implÈmentÈes dans la classe {@link VecteurHelper} </b>
+ * <b> VecteurHelperTest est la classe cqui contient les tests sur les mehodes impl√©ment√©es dans la classe {@link VecteurHelper} </b>
  *<p>
  * Elle contient commme attributs :
  * <ul>
  * <li>Une instance de la class VecteurHelper pour faire appel aux methodes .</li>
- * <li>Un vecteur initialisÈ pour le test des opÈrations unaires sur les vecteurs comme(le tri, l'inverse..).</li>
- * <li>Deux vecteurs initialisÈs pour le test de la somme des deux vecteurs.</li>
+ * <li>Un vecteur initialis√© pour le test des op√©rations unaires sur les vecteurs comme(le tri, l'inverse..).</li>
+ * <li>Deux vecteurs initialis√©s pour le test de la somme des deux vecteurs.</li>
  * </ul>
  */
 public class VecteurHelperTest {
@@ -34,6 +34,7 @@ public class VecteurHelperTest {
 		int tableT[] = {0,2,25,65,148}; 
 		assertArrayEquals(tableT,vectTest.triSelect(table)) ;
 	}
+	//m√©thode des testes des exceptiojs
 
 	/**
 	 * Test method for {@link VecteurHelper#inversTab(int[])}.
@@ -46,7 +47,7 @@ public class VecteurHelperTest {
 	
 	/**
 	 * Test method for {@link VecteurHelper#sommeVect(int[],int[])}.
-	 * @throws LenghtNotEqualException Si la taille des deux vecteurs fournis en entrÈe de la methode n'est pas la mËme. 
+	 * @throws LenghtNotEqualException Si la taille des deux vecteurs fournis en entr√©e de la methode n'est pas la m√®me. 
 	 */
 	@Test
 	public void testSommeTable() throws LenghtNotEqualException {
