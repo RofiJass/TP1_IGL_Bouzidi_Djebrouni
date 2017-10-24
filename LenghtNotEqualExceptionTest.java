@@ -1,6 +1,5 @@
 package VecteurHelperTest;
 
-import static org.junit.Assert.*;
 
 import VecteurHelper.LenghtNotEqualException;
 import VecteurHelper.VecteurHelper; 
@@ -17,12 +16,12 @@ import static junit.framework.TestCase.fail;
  */
 
 public class LenghtNotEqualExceptionTest
-/*Test de l'exception déclenchée lorsque deux tableaux n'ont pas la mème taille*/
+/*Test de l'exception dÃ©clenchÃ©e lorsque deux tableaux n'ont pas la mÃ¨me taille*/
 
 {
 	/**
 	 * Test method for {@link  LenghtNotEqualException#LenghtNotEqualException()}.
-	 * Cette methode effectue le test sur l'egalité entre le message de l'exception enlevé et le message que l'exception LenghtNotEqualException affiche 
+	 * Cette methode effectue le test sur l'egalitÃ© entre le message de l'exception enlevÃ© et le message que l'exception LenghtNotEqualException affiche 
 	 */
 	@Test
 	public void testLenghtNotEqualException() 
