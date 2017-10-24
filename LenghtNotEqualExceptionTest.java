@@ -1,5 +1,5 @@
 package VecteurHelperTest;
-
+import static org.junit.Assert.*;
 
 import VecteurHelper.LenghtNotEqualException;
 import VecteurHelper.VecteurHelper; 
